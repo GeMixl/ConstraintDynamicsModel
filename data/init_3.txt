@@ -1,0 +1,71 @@
+#######################################################
+# DATA INPUT FILE                                     #
+# Follow the following format convention:             #
+# *) hash symbol "#" indicates comments,              #
+#    lines starting with this symbol will be ignored  #
+# *) key words start with star symbol,                #
+#    a key word sets either a parameter or indicates  # 
+#    the begin/end of a data array                    #
+#                                                     #
+#######################################################
+#
+#
+# 1. Particle initial condition array
+*PARTICLE_DATA_START
+# x	y	r	m	fx	fy flag
+1.347	2.969	1.000	1.000	0.000	-10.000	0
+4.000	3.000	1.000	1.000	0.000	-10.000	0
+1.980	8.100	1.000	1.000	0.000	-10.000	0
+-1.000	1.000	1.000	1.000	0.000	0.000	1
+1.000	1.000	1.000	1.000	0.000	0.000	1
+3.000	1.000	1.000	1.000	0.000	0.000	1
+5.000	1.000	1.000	1.000	0.000	0.000	1
+*PARTICLE_DATA_STOP
+#
+# 2. Settings
+#
+#    - time step length in seconds
+*TIME_STEP_LENGTH 0.01
+#
+#    - number of time steps
+*NUMBER_OF_TIME_STEPS 500
+#
+#    - flag 1 particle velocies
+*FLAG_TWO_PARTICLE_V_X 0.
+*FLAG_TWO_PARTICLE_V_Y 0.
+#
+#    - flag 2 particle stiffness
+*FLAG_TWO_PARTICLE_K_X 1000
+*FLAG_TWO_PARTICLE_K_Y 1000
+#
+#    - flag 3 particle forces
+*FLAG_THREE_PARTICLE_F_X 0
+*FLAG_THREE_PARTICLE_F_Y 0
+*FLAG_THREE_PARTICLE_F_R 0
+#
+#    - friction coefficient
+*CONTACT_FRICTION_COEFFICIENT 0.3
+#
+#    - domain specifications
+*DOMAIN_ORIGIN_X 0.
+*DOMAIN_ORIGIN_Y -1.
+*DOMAIN_WIDTH 16.01
+*DOMAIN_HEIGHT 20.
+#
+# 3. Run control
+#
+#   - tolerance for numerical convergence 
+*EPSILON_FORCE 0.000001
+#
+# 4. Output control
+#
+#   -  List of particles for output 
+#      If not defined output for all particles will be printed.
+#      Use C convention, i.e. numbering starts with 0!
+*PARTICLE_OUTPUT_START
+0
+1
+*PARTICLE_OUTPUT_STOP
+#
+#   - namebase for the output files 
+*OUTPUT_DATA_NAME run_xy_output

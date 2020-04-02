@@ -1,0 +1,9 @@
+.cproject
+.project
+Default/ConstraintDynamicsModel
+**.svn/
+Default/src/
+util/
+data/out_particles.dat
+data/out_contacts.dat
+
