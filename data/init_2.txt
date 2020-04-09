@@ -69,7 +69,7 @@
 *TIME_STEP_LENGTH 0.01
 #
 #    - number of time steps
-*NUMBER_OF_TIME_STEPS 250
+*NUMBER_OF_TIME_STEPS 5
 #
 #    - flag 1 particle velocies
 *FLAG_TWO_PARTICLE_V_X 0.5

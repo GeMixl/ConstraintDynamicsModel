@@ -4,4 +4,5 @@
 
 USER_OBJS :=
 
-LIBS := -lfltk -lm
+LIBS := -lfltk -lXext -lX11 -lm
+

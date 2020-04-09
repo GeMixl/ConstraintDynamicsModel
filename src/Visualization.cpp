@@ -277,8 +277,8 @@ inline std::string IntToString(const unsigned int v){
 unsigned int splitString(const std::string& str, std::vector<double>& data) {
 	// will go into 'tokenize()' and 'removeComments()'
 	unsigned int count_;
-	unsigned int begin_;
-	unsigned int end_;
+	std::size_t begin_;
+	std::size_t end_;
 	std::string delim_;
 
 	double val;
@@ -298,7 +298,7 @@ unsigned int splitString(const std::string& str, std::vector<double>& data) {
 			end_ = str.find_first_of(delim_, begin_);
 			count_++;
 		}
-		else if (begin_ != std::string::npos && end_ == std::string::npos){
+		else {
 			//data.push_back(str.substr(begin_, str.length()-begin_));
 			val = boost::lexical_cast<double>(str.substr(begin_, str.length()-begin_));
 			data.push_back(val);
@@ -523,7 +523,8 @@ MyWindow::MyWindow(int w, int h, const char* txt, std::string name_b) : Fl_Windo
 	input.clear();
 	while (!inParticleData.eof()) {
 		MyPlotBox->ParticleData.push_back(new std::vector<double>);
-		getline(inParticleData, input, '\n'); splitString(input, *MyPlotBox->ParticleData.back());
+		getline(inParticleData, input, '\n');
+		splitString(input, *MyPlotBox->ParticleData.back());
 		input.clear();
 	}
 	MyPlotBox->max_step = MyPlotBox->ParticleData.size();

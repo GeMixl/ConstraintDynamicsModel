@@ -197,7 +197,7 @@ int main(int argc, char **argv) {
 
 	}
 
-//	TheOutAdapter.printData();
+	TheOutAdapter.printData();
 
 	textbuf = new Fl_Text_Buffer(0);
 	style_init();
